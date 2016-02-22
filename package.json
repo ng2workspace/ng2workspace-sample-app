@@ -1,0 +1,44 @@
+{
+  "name": "ng2workspace-sample-app",
+  "private": true,
+  "description": "Demo of ng2workspace - a flexible and modular Angular 2 workspace that can be used as a starter kit with potentially unlimited build configurations - cloned from AngularClass's angular2-webpack-starter",
+  "homepage": "https://github.com/ng2workspace/ng2workspace-sample-app#readme",
+  "author": "Merott Movahedi <merott@merott.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-beta.7",
+    "es6-promise": "3.1.2",
+    "es6-shim": "0.34.4",
+    "es7-reflect-metadata": "1.5.5",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0",
+    "gulp": "^3.9.1",
+    "json-loader": "^0.5.4",
+    "ng2workspace": "../ng2workspace",
+    "ng2workspace-addon-webpack": "../ng2workspace-addon-webpack",
+    "ng2workspace-addon-webpack-assets": "../ng2workspace-addon-webpack-assets",
+    "ng2workspace-addon-webpack-css": "../ng2workspace-addon-webpack-css",
+    "ng2workspace-addon-webpack-html": "../ng2workspace-addon-webpack-html",
+    "ng2workspace-addon-webpack-index-html": "../ng2workspace-addon-webpack-index-html",
+    "ng2workspace-addon-webpack-ts": "../ng2workspace-addon-webpack-ts",
+    "ng2workspace-addon-webpack-tslint": "../ng2workspace-addon-webpack-tslint",
+    "typescript": "^1.7.5",
+    "typings": "^0.6.8"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "scripts": {
+    "patch:middleware": "npm install git://github.com/Merott/webpack-dev-middleware#309f25287b83b32d42759f1eaa76230283ac7517",
+    "postinstall": "npm run patch:middleware",
+    "start": "gulp webpack/webpack:watch",
+    "start:prod": "gulp webpack/webpack:watch"
+  }
+}
