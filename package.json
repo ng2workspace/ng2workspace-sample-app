@@ -39,6 +39,6 @@
     "patch:middleware": "npm install git://github.com/Merott/webpack-dev-middleware#309f25287b83b32d42759f1eaa76230283ac7517",
     "postinstall": "npm run patch:middleware",
     "start": "gulp webpack/webpack:watch",
-    "start:prod": "gulp webpack/webpack:watch"
+    "start:prod": "gulp webpack/webpack:watch --env.mode=production"
   }
 }
