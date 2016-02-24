@@ -20,7 +20,7 @@
     "gulp": "^3.9.1",
     "json-loader": "^0.5.4",
     "ng2workspace": "^0.0.1",
-    "ng2workspace-addon-webpack": "^0.0.1",
+    "ng2workspace-addon-webpack": "^0.0.2",
     "ng2workspace-addon-webpack-assets": "^0.0.1",
     "ng2workspace-addon-webpack-css": "^0.0.1",
     "ng2workspace-addon-webpack-html": "^0.0.1",
@@ -36,8 +36,6 @@
     ]
   },
   "scripts": {
-    "patch:middleware": "npm install git://github.com/Merott/webpack-dev-middleware#309f25287b83b32d42759f1eaa76230283ac7517",
-    "postinstall": "npm run patch:middleware",
     "start": "gulp webpack/webpack:watch",
     "start:prod": "gulp webpack/webpack:watch --env.mode=production"
   }
