@@ -22,20 +22,25 @@ if(process.env.mode === 'production') {
  */
 import {App} from './app/app';
 
-/*
- * Bootstrap our Angular app with a top level component `App` and inject
- * our Services and Providers into Angular's dependency injection
- */
-document.addEventListener('DOMContentLoaded', function main() {
+const main = () => {
+  /*
+   * Bootstrap our Angular app with a top level component `App` and inject
+   * our Services and Providers into Angular's dependency injection
+   */
   bootstrap(App, [
     ...ENV_PROVIDERS,
     ...HTTP_PROVIDERS,
     ...ROUTER_PROVIDERS,
     provide(LocationStrategy, {useClass: HashLocationStrategy})
-  ])
-      .catch(err => console.error(err));
+  ]).catch(err => console.error(err));
+};
 
-});
+document.addEventListener('DOMContentLoaded', main);
+
+if((<any>module).hot) {
+  main();
+  (<any>module).hot.accept();
+}
 
 // For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your app
 // Also see custom_typings.d.ts as you also need to do `typings install x` where `x` is your module
