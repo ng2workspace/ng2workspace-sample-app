@@ -25,6 +25,7 @@
     "ng2workspace-addon-webpack-css": "*",
     "ng2workspace-addon-webpack-html": "*",
     "ng2workspace-addon-webpack-index-html": "*",
+    "ng2workspace-addon-webpack-karma": "*",
     "ng2workspace-addon-webpack-ts": "*",
     "ng2workspace-addon-webpack-tslint": "*",
     "typescript": "^1.7.5",
@@ -37,6 +38,8 @@
   },
   "scripts": {
     "start": "gulp webpack/webpack:watch",
-    "start:prod": "gulp webpack/webpack:watch --env.mode=production"
+    "start:prod": "gulp webpack/webpack:watch --env.mode=production",
+    "test": "gulp webpack-karma/karma --env.mode=test",
+    "test:watch": "gulp webpack-karma/karma:watch --env.mode=test"
   }
 }
