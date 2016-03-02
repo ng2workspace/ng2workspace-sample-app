@@ -5,8 +5,9 @@ import {ng2workspace} from 'ng2workspace';
 
 (function setupWorkspace() {
   ng2workspace.configure({
+    file_vendors: 'polyfills',
     html_title: 'Demo: ng2workspace - AngularClass clone',
-    spec_entry: 'spec.main.js',
+    spec_entry: 'spec-bundle.js',
     env: {
       hello: 'hola'
     }
@@ -25,7 +26,8 @@ import {ng2workspace} from 'ng2workspace';
   ng2workspace.bootstrap(gulp);
 })();
 
-gulp.task('default', ['webpack/webpack']);
+gulp.task('default', ['build']);
+gulp.task('build', ['webpack/webpack']);
 gulp.task('watch', ['webpack/webpack:watch']);
 
 function jsonSupport(options, workspace) {
