@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "gulp webpack/webpack:watch",
-    "start:prod": "gulp webpack/webpack:watch --env.mode=production",
+    "start:prod": "npm start -- --env.mode=production --hot_reload=0",
     "test": "gulp webpack-karma/karma --env.mode=test",
     "test:watch": "gulp webpack-karma/karma:watch --env.mode=test"
   }
