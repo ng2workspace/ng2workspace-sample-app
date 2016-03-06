@@ -20,7 +20,7 @@ export class About {
   ngOnInit() {
     console.log('hello `About` component');
 
-    if(process.env.hello) {
+    if (process.env.hello) {
       console.log(`I've been told to say ${process.env.hello}!`);
     }
   }

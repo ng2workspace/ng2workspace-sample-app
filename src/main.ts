@@ -56,6 +56,8 @@ function bootstrapDomReady() {
   return document.addEventListener('DOMContentLoaded', main);
 }
 
+let fx = () => console.log('fx' !== 'x');
+
 if ('development' === process.env.mode) {
   // activate hot module reload
   if (module.hot) {

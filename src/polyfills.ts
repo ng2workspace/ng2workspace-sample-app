@@ -2,7 +2,7 @@ require('es6-shim');
 require('es6-promise');
 require('reflect-metadata');
 
-if(process.env.mode === 'production') {
+if (process.env.mode === 'production') {
   require('zone.js/dist/zone-microtask.min.js');
 } else {
   Error['stackTraceLimit'] = Infinity;
