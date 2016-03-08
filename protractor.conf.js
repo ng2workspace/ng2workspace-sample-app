@@ -1,6 +1,15 @@
 // @AngularClass
 require('ts-node/register');
 
+var fs = require('fs');
+var path = require('path');
+
+var seleniumServerJar = path.join(
+    'node_modules/protractor/selenium',
+    fs.readdirSync('node_modules/protractor/selenium').filter(function(fname) {
+      return fname.indexOf('selenium-server-standalone-') === 0;
+    })[0]);
+
 exports.config = {
   baseUrl: 'http://localhost:9999/',
 
@@ -35,7 +44,7 @@ exports.config = {
     browser.ignoreSynchronization = true;
   },
 
-  seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar",
+  seleniumServerJar: seleniumServerJar,
 
   /**
    * Angular 2 configuration
